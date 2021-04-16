@@ -1,0 +1,23 @@
+.FetchButton{
+    .error{
+        padding: 20px;
+        background: pink; 
+        color :red; 
+        border: 2px solid red; 
+        border-radius: 10px;
+        width: 80%;
+        margin: auto;
+    }
+
+    button{
+       padding: 10px 20px;
+        border-radius: 20px;
+        border: none;
+        color: white; 
+        background: rgb(44, 80, 179); 
+    }
+}
+
+.Disabled{
+    filter: grayscale(1);
+}

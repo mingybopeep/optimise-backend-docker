@@ -1,0 +1,23 @@
+version: "3.9"
+services: 
+    sql: 
+        image: mysql:8.0.20
+        restart: always
+        environment: 
+            MYSQL_ROOT_PASSWORD: 'password'
+        expose: 
+            - 3306
+        volumes:
+            # - ./database:/var/lib/mysql
+            - ./init-database/create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    api: 
+        build: ./optimise-api
+        restart: always
+        volumes: 
+            - ./optimise-api:/usr/src/api
+        ports: 
+            - 3001:3001
+        depends_on: 
+            - sql
+
+    
